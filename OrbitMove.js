@@ -3,6 +3,16 @@ let x = Math.cos(angle);
 let y = Math.sin(angle);
 let r1 = effect("r1")("Slider");
 let r2 = effect("r2")("Slider");
+
+function elipse() {
+	if (effect("elipse")("Checkbox")) {
+		return effect("r2")("Slider");
+	}
+	else {
+		return effect("r1")("Slider");
+	}
+}
+
 try {
 	result = effect("Layer center")("Layer").transform.position + [r1 * x, r2 * y];
 } catch(err) {
