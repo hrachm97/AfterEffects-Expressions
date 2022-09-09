@@ -6,3 +6,5 @@ try {
 	let angle = vec[1] < 0 ? radiansToDegrees(Math.asin(vec[0] / Length)) : 180 - radiansToDegrees(Math.asin(vec[0] / Length));
 	angle + effect("Angle Control")("Angle");
 } catch(err) {
+	0
+}
