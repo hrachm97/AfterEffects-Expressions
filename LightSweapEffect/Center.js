@@ -3,7 +3,13 @@ const Speed = 1 / _duration; // sweap per second
 const sweaper = time % _duration; // loops from 0 to duration amount in real time speed
 const unitSweap = sweaper*Speed; // loops from 0 to 1 in duration time
 const cosinus_sweap = Math.cos(Math.PI * unitSweap); // loops from 1 to -1
-const slope = effect("CC Light Sweep")("Direction");
+const slope = radiansToDegrees(
+		Math.atan(
+			Math.tan(
+				degreesToRadians(effect("CC Light Sweep")("Direction"))
+				)
+			)
+		)
 
 // for layers without distinct sizes (width, height) exmp. thisLayer.height === thisComp.height
 const has_size = !(width === thisComp.width && height === thisComp.height);
