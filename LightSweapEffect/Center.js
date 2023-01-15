@@ -5,7 +5,6 @@ const unitSweap = sweaper*Speed; // loops from 0 to 1 in duration time
 const cosinus_sweap = Math.cos(Math.PI * unitSweap); // loops from 1 to -1
 const slope = effect("CC Light Sweep")("Direction");
 
-
 // for layers without distinct sizes (width, height) exmp. thisLayer.height === thisComp.height
 const has_size = !(width === thisComp.width && height === thisComp.height);
 const rect = thisLayer.sourceRectAtTime();
