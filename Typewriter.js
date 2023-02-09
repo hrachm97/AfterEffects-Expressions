@@ -1,6 +1,8 @@
-var cursor = (effect("cursor")("Checkbox") == true && Math.sin(time*10) > 0) ? "|" : "";
-var delay = effect("delay")("Slider");
-var type_end = delay + effect("type duration")("Slider");
+let delay = effect("delay")("Slider");
+let type_end = delay + effect("type duration")("Slider");
+let localTime = time - inPoint;
 
-localTime = time - inPoint;
-text.sourceText.substr(0, linear(localTime, delay, type_end, 0, text.sourceText.length)) + cursor
+let typed_amount = linear(localTime, delay, type_end, 0, text.sourceText.length);
+let cursor = (effect("cursor")("Checkbox") == true && Math.sin(time*10) > 0) ? "|" : "";
+
+text.sourceText.substr(0, typed_amount) + cursor
